@@ -21,9 +21,10 @@
  */
 
 //include ('vendor/autoload.php');
-require_once('vendor/autoload.php');
+//require_once('vendor/autoload.php');
 $path = __DIR__ . '/vendor/autoload.php';
-error_log($path);
+//error_log($path);
+require_once($path);
 // Namespace
 use \LINE\LINEBot;
 use \LINE\LINEBot\HTTPClient;
