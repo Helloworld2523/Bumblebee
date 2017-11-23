@@ -30,19 +30,19 @@ use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 // Token
-$channel_token = 'bjjrcUYB02T4Qfh42Qqg+D91JiLYAit7F5OSiXMAynf5X4qi3m/ebpCKkgoOg2ZuliHg1hzrd0HnC5ya3cLCOISlJZEG1BjGy0mDJ/XtOguEW4LFQjDw17mqJH0VgDhukKEoJiXpRqh2XW1Aka2SLwdB04t89/1O/w1cDnyilFU=';
+$channel_token = 'C8DC9WB6CxQK3qewjsdBt1pO6sdkFgfieGKhN/HMZmWX1AQlXr8vr/ocqIDuW9keliHg1hzrd0HnC5ya3cLCOISlJZEG1BjGy0mDJ/XtOgtc7VZvo4eeVGx/ETH+Q6qNEy7AQMvLVWyTTPF6o0koqAdB04t89/1O/w1cDnyilFU=';
 $channel_secret = 'a6828dff8c16162227198d1ef3467c68';
 
 // Get message from Line API
 $content = file_get_contents('php://input');
 error_log( $content );
 $events = json_decode($content, true);
-error_log($events['events']);
+//error_log($events['events']);
 if (!is_null($events['events'])) {
 
 	// Loop through each event
 	foreach ($events['events'] as $event) {
-    
+        error_log($event['type']);
         // Line API send a lot of event type, we interested in message only.
 		if ($event['type'] == 'message') {
 
