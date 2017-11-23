@@ -1,9 +1,9 @@
 <?php
 // include composer autoload
-require_once '../vendor/autoload.php';
+require_once ('../vendor/autoload.php');
 
 // การตั้งเกี่ยวกับ bot
-require_once 'bot_settings.php';
+require_once ('bot_settings.php');
 
 ///////////// ส่วนของการเรียกใช้งาน class ผ่าน namespace
 use LINE\LINEBot;
