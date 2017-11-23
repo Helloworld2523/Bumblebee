@@ -33,6 +33,7 @@ $channel_secret = 'a6828dff8c16162227198d1ef3467c68';
 
 // Get message from Line API
 $content = file_get_contents('php://input');
+error_log( $content );
 $events = json_decode($content, true);
 
 if (!is_null($events['events'])) {
