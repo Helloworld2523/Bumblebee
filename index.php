@@ -51,10 +51,10 @@ if (!is_null($events['events'])) {
                 case 'text':
                     // Get replyToken
                     $replyToken = $event['replyToken'];
-        
+                    error_log($replyToken);
                     // Reply message
                     $respMessage = 'Hello, your message is '. $event['message']['text'];
-            
+                    error_log($channel_token);
                     $httpClient = new CurlHTTPClient($channel_token);
                     error_log( $httpClient );
                     $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
