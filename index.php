@@ -1,5 +1,5 @@
 <?php
- {
+ /*{
   "events": [
       {
         "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
@@ -16,7 +16,7 @@
           }
       }
   ]
-}
+}*/
 
 require_once('./vendor/autoload.php');
 // Namespace
