@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
         error_log($event['type']);
         // Line API send a lot of event type, we interested in message only.
 		if ($event['type'] == 'message') {
-
+            error_log($event['message']['type']);
             switch($event['message']['type']) {
                 
                 case 'text':
