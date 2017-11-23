@@ -26,7 +26,7 @@
         },
         "time": "2017-09-20T10:22:04+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "LINE\\": "src/"
