@@ -33,7 +33,7 @@ use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 // Token
-$channel_token = 'C8DC9WB6CxQK3qewjsdBt1pO6sdkFgfieGKhN/HMZmWX1AQlXr8vr/ocqIDuW9keliHg1hzrd0HnC5ya3cLCOISlJZEG1BjGy0mDJ/XtOgtc7VZvo4eeVGx/ETH+Q6qNEy7AQMvLVWyTTPF6o0koqAdB04t89/1O/w1cDnyilFU=';
+$channel_token = 'yjBtwbJsQU9xYHkUIDswtYkn4z4hC0eYbWYvTY4pYrABSNAHwwLXOLh61iF64WA5liHg1hzrd0HnC5ya3cLCOISlJZEG1BjGy0mDJ/XtOgtCKeRPzHSY3BTQmyJw5ByxTRQieEwSZoQWXURGQgodGwdB04t89/1O/w1cDnyilFU=';
 $channel_secret = 'a6828dff8c16162227198d1ef3467c68';
 
 // Get message from Line API
