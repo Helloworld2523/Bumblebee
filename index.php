@@ -55,7 +55,7 @@ if (!is_null($events['events'])) {
                     // Reply message
                     $respMessage = 'Hello, your message is '. $event['message']['text'];
             
-                    $httpClient = new CurlHTTPClient($channel_token);
+                    $httpClient = new CurlHTTPClient('PEYQ9LDlWMlOhydE6hbCsPKqMzGUZr9y1D+b86E97TTliLv6Hu432yS/T8O9P4MXliHg1hzrd0HnC5ya3cLCOISlJZEG1BjGy0mDJ/XtOgtDK9z5qM6T7Vvhh2/lQo7ijAvJIgr7Im3dCJwLKfaFwQdB04t89/1O/w1cDnyilFU=');
                     error_log( $httpClient );
                     $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
         
