@@ -37,7 +37,7 @@ $channel_secret = 'a6828dff8c16162227198d1ef3467c68';
 $content = file_get_contents('php://input');
 error_log( $content );
 $events = json_decode($content, true);
-error_log( $events );
+error_log($events['events']);
 if (!is_null($events['events'])) {
 
 	// Loop through each event
