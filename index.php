@@ -1,11 +1,11 @@
 <?php
-require_once('./vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
 // Namespace
-use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
-
 use \LINE\LINEBot;
-
+use \LINE\LINEBot\HTTPClient;
+use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 $channel_token =
