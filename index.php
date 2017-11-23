@@ -55,9 +55,10 @@ if (!is_null($events['events'])) {
                     // Reply message
                     $respMessage = 'Hello, your message is '. $event['message']['text'];
                     error_log($channel_token);
-                    $httpClient = new CurlHTTPClient($channel_token);
+                    $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channel_token);
                     error_log( $httpClient );
-                    $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
+                    //$bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
+                    $bot = new \LINE\LINEBot($httpClient,array('channelSecret' => $channel_secret));
         
                     $textMessageBuilder = new TextMessageBuilder($respMessage);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
