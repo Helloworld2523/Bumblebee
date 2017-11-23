@@ -20,8 +20,8 @@
 }
  */
 
-include ('vendor/autoload.php');
-
+//include ('vendor/autoload.php');
+require_once('./vendor/autoload.php');
 // Namespace
 use \LINE\LINEBot;
 use \LINE\LINEBot\HTTPClient;
