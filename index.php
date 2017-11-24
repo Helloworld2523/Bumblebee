@@ -44,6 +44,10 @@ if (!is_null($events['events'])) {
 				$response = $bot->replyMessage($replyToken, $textMessageBuilder);
 				
 				break;
+				case 'image': 
+					$messageID = $event['message']['id']; 
+					$respMessage = 'Hello, your image ID is '. $messageID; 
+				break;
 				
 			}
 			
