@@ -23,37 +23,26 @@ if (!is_null($events['events'])) {
     foreach ($events['events'] as $event) {
         // 		Line API send a lot of event type, we interested in message only.
         if ($event['type'] == 'message') {
+			//Get replyToken
+			$replyToken = $event['replyToken'];
             switch ($event['message']['type']) {
-                case 'text':
-                // 				Get replyToken
-                    $replyToken = $event['replyToken'];
-                
-                // 				Reply message
-                    $respMessage = 'Hello, your message is '. $event['message']['text'];
-                
-                    $httpClient = new CurlHTTPClient($channel_token);
-                
-                    $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
-                
-                    $textMessageBuilder = new TextMessageBuilder($respMessage);
-                
-                    $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-                
+                case 'text':               
+                	//Reply message
+                	$respMessage = 'Hello, your message is '. $event['message']['text'];
+
                     break;
-                case 'image':
-                    $messageID = $event['message']['id'];
-                
-                    // Create image on server.
-                    $fileID = $event['message']['id'];
-                    $response = $bot->getMessageContent($fileID);
-                    $fileName = 'linebot.jpg';
-                    $file = fopen($fileName, 'w');
-                    fwrite($file, $response->getRawBody());
-                
-                     // Reply message
-                    $respMessage = 'Hello, your image ID is '. $messageID;
+				case 'image':
+					$messageID = $event['message']['id']; 
+					$respMessage = 'Hello, your image ID is '. $messageID;
                     break;
-            }
+			}
+			$httpClient = new CurlHTTPClient($channel_token);
+			
+			$bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
+			
+			$textMessageBuilder = new TextMessageBuilder($respMessage);
+			
+			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
         }
     }
 }
