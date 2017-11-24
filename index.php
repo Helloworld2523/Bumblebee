@@ -29,19 +29,20 @@ if (!is_null($events['events'])) {
                 case 'text':               
                 	//Reply message
                 	$respMessage = 'Hello, your message is '. $event['message']['text'];
-
-                    break;
+				break;
 				case 'image':
 					$messageID = $event['message']['id']; 
 					$respMessage = 'Hello, your image ID is '. $messageID;
-                    break;
+				break;
+				case 'sticker': 
+					$messageID = $event['message']['packageId']; 
+					// Reply message 
+					$respMessage = 'Hello, your Sticker Package ID is '. $messageID; 
+				break;
 			}
-			$httpClient = new CurlHTTPClient($channel_token);
-			
-			$bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
-			
-			$textMessageBuilder = new TextMessageBuilder($respMessage);
-			
+			$httpClient = new CurlHTTPClient($channel_token);		
+			$bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));			
+			$textMessageBuilder = new TextMessageBuilder($respMessage);			
 			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
         }
     }
